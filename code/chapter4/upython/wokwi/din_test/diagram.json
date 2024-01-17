@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Dew Ninja",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -29.73,
+      "left": -106.76,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 22.51,
+      "left": 151.42,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 131.03,
+      "left": 86.3,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 106.49,
+      "left": -235.36,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:D2", "r1:1", "green", [ "h23", "v11.14" ] ],
+    [ "led1:A", "r1:2", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "esp:D13", "btn1:1.r", "green", [ "h0" ] ],
+    [ "btn1:2.r", "esp:GND.2", "green", [ "h36.6", "v-17.19" ] ]
+  ],
+  "dependencies": {}
+}

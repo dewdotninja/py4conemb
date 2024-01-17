@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Dew Ninja",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -29.73,
+      "left": -106.76,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -59.43, "left": 131.42, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:D4", "dht1:SDA", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

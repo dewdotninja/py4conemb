@@ -1,0 +1,16 @@
+{
+  "name": "lag3",
+  "author": "Dew Toochinda",
+  "pins": [
+    "VCC",
+    "GND",
+    "U",
+    "RESET",
+    "X1",
+    "X2",
+    "Y"
+
+  ],
+  "controls": [
+  ]
+}

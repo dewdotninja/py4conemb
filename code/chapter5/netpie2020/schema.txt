@@ -1,0 +1,29 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "r": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        }
+      },
+      "type": "number"
+    },
+    "y": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        }
+      },
+      "type": "number"
+    },
+    "u": {
+      "operation": {
+        "store": {
+          "ttl": "7d"
+        }
+      },
+      "type": "number"
+    }
+  }
+}

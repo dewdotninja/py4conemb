@@ -1,0 +1,653 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"id": "m8vai6",
+			"title": "Plant output",
+			"width": 1,
+			"row": {
+				"5": 9,
+				"6": 9
+			},
+			"col": {
+				"5": 2,
+				"6": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "elah4t",
+					"type": "gauge",
+					"settings": {
+						"title": "y",
+						"value": "#[\"esp32\"][\"shadow\"][\"y\"]",
+						"units": "Volts",
+						"min_value": 0,
+						"max_value": 3,
+						"decimal": 2,
+						"human_friendly": true,
+						"rangeonpercent": false,
+						"id": "elah4t"
+					}
+				}
+			]
+		},
+		{
+			"id": "g3emqa",
+			"title": "Controller output",
+			"width": 1,
+			"row": {
+				"5": 9,
+				"6": 9
+			},
+			"col": {
+				"5": 3,
+				"6": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "xovm3d",
+					"type": "gauge",
+					"settings": {
+						"title": "u",
+						"value": "#[\"esp32\"][\"shadow\"][\"u\"]",
+						"units": "Volts",
+						"min_value": 0,
+						"max_value": 3,
+						"decimal": 2,
+						"human_friendly": true,
+						"rangeonpercent": false,
+						"id": "xovm3d"
+					}
+				}
+			]
+		},
+		{
+			"id": "b7p891",
+			"title": "Ref. cmd",
+			"width": 1,
+			"row": {
+				"5": 9,
+				"6": 9
+			},
+			"col": {
+				"5": 1,
+				"6": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "yrxhkz",
+					"type": "gauge",
+					"settings": {
+						"title": "r",
+						"value": "#[\"esp32\"][\"shadow\"][\"r\"]",
+						"units": "Volts",
+						"min_value": 0,
+						"max_value": 3,
+						"decimal": 2,
+						"human_friendly": true,
+						"rangeonpercent": false,
+						"id": "yrxhkz",
+						"color": "grey",
+						"showvalue": 1,
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"sensitivity": 200,
+						"initialvalue": "0"
+					}
+				},
+				{
+					"id": "kf3izj",
+					"type": "Slider",
+					"settings": {
+						"caption": "r",
+						"color": "yellow",
+						"showvalue": 1,
+						"min": 0,
+						"max": "3",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "#[\"esp32\"][\"shadow\"][\"r\"]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"r=\"+value)",
+						"id": "kf3izj"
+					}
+				}
+			]
+		},
+		{
+			"id": "ngjh64",
+			"title": "PID parms",
+			"width": 1,
+			"row": {
+				"5": 9,
+				"6": 9
+			},
+			"col": {
+				"5": 4,
+				"6": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "0a223c",
+					"type": "Button",
+					"settings": {
+						"caption": "Autotune",
+						"color": "yellow",
+						"onClick": "#[\"esp32\"].publishMsg(\"cmd\",\"autotune\")",
+						"id": "0a223c",
+						"oncolor": "#FFC773",
+						"offcolor": "#222222",
+						"blinking": "",
+						"blinkfrequency": "1",
+						"on_text": "ON",
+						"off_text": "OFF"
+					}
+				},
+				{
+					"id": "x9p34q",
+					"type": "indicator",
+					"settings": {
+						"title": "Autotune",
+						"oncolor": "#FFC773",
+						"offcolor": "#222222",
+						"value": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[6]==1",
+						"blinking": "",
+						"blinkfrequency": "1",
+						"on_text": "Active",
+						"off_text": "Inactive",
+						"id": "x9p34q"
+					}
+				},
+				{
+					"id": "bdbaw4",
+					"type": "Slider",
+					"settings": {
+						"caption": "Kp",
+						"color": "blue",
+						"showvalue": 1,
+						"min": "1",
+						"max": "20",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[8]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"kp=\"+value)",
+						"id": "bdbaw4"
+					}
+				},
+				{
+					"id": "dg8gfq",
+					"type": "Slider",
+					"settings": {
+						"caption": "Ki",
+						"color": "red",
+						"showvalue": 1,
+						"min": "1",
+						"max": "20",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[9]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"ki=\"+value)",
+						"id": "dg8gfq"
+					}
+				},
+				{
+					"id": "43hs4r",
+					"type": "Slider",
+					"settings": {
+						"caption": "Kd",
+						"color": "green",
+						"showvalue": 1,
+						"min": "1",
+						"max": "20",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[10]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"kd=\"+value)",
+						"id": "43hs4r"
+					}
+				},
+				{
+					"id": "udfw8b",
+					"type": "Slider",
+					"settings": {
+						"caption": "Kt",
+						"color": "white",
+						"showvalue": 1,
+						"min": "0",
+						"max": "2",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[11]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"kt=\"+value)",
+						"id": "udfw8b"
+					}
+				},
+				{
+					"id": "l1344n",
+					"type": "Slider",
+					"settings": {
+						"caption": "Wp",
+						"color": "grey",
+						"showvalue": 1,
+						"min": "0",
+						"max": "1",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[12]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"wp=\"+value)",
+						"id": "l1344n"
+					}
+				},
+				{
+					"id": "3ezqga",
+					"type": "Slider",
+					"settings": {
+						"caption": "Wd",
+						"color": "yellow",
+						"showvalue": 1,
+						"min": "0",
+						"max": "1",
+						"step": "0.1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[13]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"wd=\"+value)",
+						"id": "3ezqga"
+					}
+				},
+				{
+					"id": "ethesb",
+					"type": "Slider",
+					"settings": {
+						"caption": "N",
+						"color": "grey",
+						"showvalue": 1,
+						"min": "1",
+						"max": "200",
+						"step": "1",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[14]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"n=\"+value)",
+						"id": "ethesb"
+					}
+				}
+			]
+		},
+		{
+			"id": "gu94e4",
+			"title": "Load & Save",
+			"width": 1,
+			"row": {
+				"5": 15,
+				"6": 15
+			},
+			"col": {
+				"5": 2,
+				"6": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "i0u7jj",
+					"type": "Toggle",
+					"settings": {
+						"label": "Init parms",
+						"oncolor": "#00C853",
+						"offcolor": "#F44336",
+						"ontext": "Shadow",
+						"offtext": "Local",
+						"state": "#[\"esp32\"][\"shadow\"][\"initparm\"]==1",
+						"onToggleOn": "#[\"esp32\"].writeShadow(\"initparm\",1)",
+						"onToggleOff": "#[\"esp32\"].writeShadow(\"initparm\",0)",
+						"id": "i0u7jj"
+					}
+				},
+				{
+					"id": "78e9rc",
+					"type": "Button",
+					"settings": {
+						"caption": "Load",
+						"label": "from shadow",
+						"color": "yellow",
+						"onClick": "#[\"esp32\"].publishMsg(\"cmd\",\"loadparms\")",
+						"id": "78e9rc"
+					}
+				},
+				{
+					"id": "doldzt",
+					"type": "Button",
+					"settings": {
+						"caption": "Save",
+						"label": "to shadow",
+						"color": "blue",
+						"onClick": "#[\"esp32\"].publishMsg(\"cmd\",\"saveparms\")",
+						"id": "doldzt"
+					}
+				}
+			]
+		},
+		{
+			"id": "wkows8",
+			"title": "Controller",
+			"width": 1,
+			"row": {
+				"5": 15,
+				"6": 15
+			},
+			"col": {
+				"5": 3,
+				"6": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "lyfeuj",
+					"type": "Toggle",
+					"settings": {
+						"label": "feedback loop",
+						"oncolor": "#00C853",
+						"var_oncolor": "",
+						"offcolor": "#F44336",
+						"ontext": "Closed",
+						"offtext": "Open",
+						"state": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[4]==1",
+						"onToggleOn": "#[\"esp32\"].publishMsg(\"cmd\",\"feedback=1\")",
+						"onToggleOff": "#[\"esp32\"].publishMsg(\"cmd\",\"feedback=0\")",
+						"id": "lyfeuj"
+					}
+				},
+				{
+					"id": "6oi6pu",
+					"type": "Toggle",
+					"settings": {
+						"label": "PID",
+						"oncolor": "#00C853",
+						"var_oncolor": "",
+						"offcolor": "#F44336",
+						"ontext": "On",
+						"offtext": "Off",
+						"state": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[5]==0",
+						"onToggleOn": "#[\"esp32\"].publishMsg(\"cmd\",\"controller=0\")",
+						"onToggleOff": "",
+						"id": "6oi6pu"
+					}
+				},
+				{
+					"id": "4fcwqx",
+					"type": "Toggle",
+					"settings": {
+						"label": "Custom C(s)",
+						"oncolor": "#00C853",
+						"var_oncolor": "",
+						"offcolor": "#F44336",
+						"ontext": "On",
+						"offtext": "Off",
+						"state": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[5]==1",
+						"onToggleOn": "#[\"esp32\"].publishMsg(\"cmd\",\"controller=1\")",
+						"onToggleOff": "",
+						"id": "4fcwqx"
+					}
+				},
+				{
+					"id": "7eobjm",
+					"type": "Toggle",
+					"settings": {
+						"label": "SFBI",
+						"oncolor": "#00C853",
+						"var_oncolor": "",
+						"offcolor": "#F44336",
+						"ontext": "On",
+						"offtext": "Off",
+						"state": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[5]==2",
+						"onToggleOn": "#[\"esp32\"].publishMsg(\"cmd\",\"controller=2\")",
+						"onToggleOff": "",
+						"id": "7eobjm"
+					}
+				}
+			]
+		},
+		{
+			"id": "jbg5qo",
+			"title": "Period",
+			"width": 1,
+			"row": {
+				"5": 17,
+				"6": 17
+			},
+			"col": {
+				"5": 1,
+				"6": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "ighg59",
+					"type": "Slider",
+					"settings": {
+						"caption": "T",
+						"color": "green",
+						"showvalue": 1,
+						"min": "0.01",
+						"max": "1",
+						"step": "0.01",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[0]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"t=\"+value)",
+						"id": "ighg59"
+					}
+				}
+			]
+		},
+		{
+			"id": "3b8zub",
+			"title": "LAG3 variables",
+			"width": 1,
+			"row": {
+				"5": 21,
+				"6": 21
+			},
+			"col": {
+				"5": 1,
+				"6": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "nylet1",
+					"type": "Toggle",
+					"settings": {
+						"label": "Plantsim",
+						"oncolor": "#00C853",
+						"offcolor": "#F44336",
+						"ontext": "ON",
+						"offtext": "OFF",
+						"state": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[1]==1",
+						"onToggleOn": "#[\"esp32\"].publishMsg(\"cmd\",\"plantsim=1\")",
+						"onToggleOff": "#[\"esp32\"].publishMsg(\"cmd\",\"plantsim=0\")",
+						"id": "nylet1"
+					}
+				},
+				{
+					"id": "4nza4g",
+					"type": "Toggle",
+					"settings": {
+						"label": "Capture",
+						"oncolor": "#00C853",
+						"offcolor": "#F44336",
+						"ontext": "ON",
+						"offtext": "OFF",
+						"state": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[3]==1",
+						"onToggleOn": "#[\"esp32\"].publishMsg(\"cmd\",\"capture=1\")",
+						"onToggleOff": "#[\"esp32\"].publishMsg(\"cmd\",\"capture=0\")",
+						"id": "4nza4g"
+					}
+				},
+				{
+					"id": "kbzib1",
+					"type": "Slider",
+					"settings": {
+						"caption": "datasize",
+						"color": "blue",
+						"showvalue": 1,
+						"min": "10",
+						"max": "2000",
+						"step": "10",
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[2]",
+						"onStop": "#[\"esp32\"].publishMsg(\"cmd\",\"datasize=\"+value)",
+						"id": "kbzib1"
+					}
+				}
+			]
+		},
+		{
+			"id": "2argra",
+			"title": "Command",
+			"width": 1,
+			"row": {
+				"5": 23,
+				"6": 23
+			},
+			"col": {
+				"5": 2,
+				"6": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "6tup7s",
+					"type": "html",
+					"settings": {
+						"html": "<input id=\"cmdbox\" type=\"text\" style=\"width: 50%;\">\n<input type=\"button\" value=\"Send\" style=\"width: 30%;\" onclick=\"_device['esp32'].publishMsg('cmd',document.getElementById('cmdbox').value).toString() \">",
+						"height": 1,
+						"id": "6tup7s"
+					}
+				}
+			]
+		},
+		{
+			"id": "z8xsp2",
+			"title": "Sys ID",
+			"width": 1,
+			"row": {
+				"5": 25,
+				"6": 25
+			},
+			"col": {
+				"5": 3,
+				"6": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "nolkvl",
+					"type": "Button",
+					"settings": {
+						"caption": "LSID",
+						"color": "grey",
+						"onClick": "#[\"esp32\"].publishMsg(\"cmd\",\"lsid\")",
+						"id": "nolkvl",
+						"oncolor": "#FFC773",
+						"offcolor": "#222222",
+						"blinking": "",
+						"blinkfrequency": "1",
+						"on_text": "ON",
+						"off_text": "OFF"
+					}
+				},
+				{
+					"id": "toe9dn",
+					"type": "indicator",
+					"settings": {
+						"title": "",
+						"oncolor": "#F57F17",
+						"offcolor": "#222222",
+						"value": "(#[\"aux_device\"][\"msg\"][\"update\"]).split(\",\")[7]==1",
+						"blinking": "",
+						"blinkfrequency": "1",
+						"on_text": "Active",
+						"off_text": "Inactive",
+						"id": "toe9dn"
+					}
+				}
+			]
+		},
+		{
+			"id": "f301my",
+			"title": "Dashboard",
+			"width": 1,
+			"row": {
+				"5": 27,
+				"6": 27
+			},
+			"col": {
+				"5": 2,
+				"6": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "wugpjs",
+					"type": "Button",
+					"settings": {
+						"caption": "update",
+						"label": "",
+						"color": "blue",
+						"onClick": "#[\"esp32\"].publishMsg(\"cmd\",\"dbupdate\")",
+						"id": "wugpjs"
+					}
+				}
+			]
+		},
+		{
+			"id": "0k0bhs",
+			"width": 1,
+			"row": {
+				"5": 1,
+				"6": 1
+			},
+			"col": {
+				"5": 1,
+				"6": 1
+			},
+			"col_width": 4,
+			"widgets": [
+				{
+					"id": "ec02av",
+					"type": "Chart",
+					"settings": {
+						"title": "RYU Feed",
+						"datasource": "#[\"esp32\"][\"feed\"]",
+						"filter": "",
+						"query_range_duration": "6",
+						"query_range_unit": "hour",
+						"stricttimerange": false,
+						"mode": "normal",
+						"type": "line",
+						"marker": true,
+						"colors": "",
+						"totalyaxis": 1,
+						"height_block": 3
+					}
+				}
+			]
+		}
+	],
+	"datasources": [],
+	"columns": 16
+}

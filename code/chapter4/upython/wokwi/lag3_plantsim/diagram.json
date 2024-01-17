@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "Dew Ninja",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -20.31,
+      "left": -126.47,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    { "type": "chip-lag3", "id": "chip1", "top": 0.51, "left": 134.32, "attrs": {} },
+    { "type": "chip-filter", "id": "chip2", "top": 103.82, "left": 134.19, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -121.47,
+      "left": 12.26,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 10.87,
+      "left": -2.53,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 196.91,
+      "left": 46.85,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "rgb1:COM", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:GND.1", "green", [ "h0.57", "v77.68" ] ],
+    [ "rgb1:R", "esp:D19", "green", [ "v0" ] ],
+    [ "rgb1:G", "esp:D18", "green", [ "v0" ] ],
+    [ "rgb1:B", "esp:D21", "green", [ "v0" ] ],
+    [ "chip2:VCC", "esp:3V3", "red", [ "h-88.77", "v-0.46" ] ],
+    [ "chip1:VCC", "esp:3V3", "red", [ "h-76.35", "v126.82" ] ],
+    [ "chip1:GND", "esp:GND.1", "black", [ "h-54.66", "v109.23" ] ],
+    [ "chip2:GND", "esp:GND.1", "black", [ "h-40.84", "v7.06" ] ],
+    [ "esp:D5", "chip2:IN", "blue", [ "h41.15", "v92.31", "h253.38", "v-38.81" ] ],
+    [ "chip2:OUT", "chip1:ADCIN", "violet", [ "h20.87", "v-91.77" ] ],
+    [ "esp:VN", "chip1:DACOUT", "#8f4814", [ "h-33.76", "v-47.57", "h420.01", "v29.67" ] ],
+    [ "chip1:U", "chip2:OUT", "green", [ "h-18.14", "v52.83", "h138.1", "v25.11" ] ],
+    [ "chip1:Y", "esp:VN", "violet", [ "h32.15", "v-61.5", "h-430.29", "v-1.14" ] ],
+    [ "chip1:RESET", "btn1:1.l", "green", [ "h-43.84", "v143.17", "h-80.83", "v25.09" ] ],
+    [ "btn1:2.l", "esp:3V3", "red", [ "h-47.73", "v-90.36" ] ],
+    [ "esp:D33", "chip1:X1", "violet", [ "h-48.04", "v-120.04", "h459.91", "v85.01" ] ],
+    [ "chip1:X2", "esp:D32", "violet", [ "h38.43", "v-79.97", "h-442.48", "v97.56" ] ]
+  ],
+  "dependencies": {}
+}
