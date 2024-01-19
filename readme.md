@@ -61,3 +61,47 @@
 </ul>
 
 </ul>
+
+### วีดีโอ
+
+คลิปวีดีโอคัดเลือกที่เกี่ยวข้องกับเนื้อหาในหนังสือ คลิปอื่นดูได้จากช่อง <a href="https://www.youtube.com/@varodomt">@varodomt</a>
+
+<ul>
+<li />บทที่ 2
+<ul>
+<li /><a href="https://youtu.be/ga2dXXfAiFk?si=HSCCF3p7DPQcigoQ">วีดีโอ 03 (220533) : วงจรไฟฟ้ากระแสสลับและสัญญาณที่เป็นฟังก์ชันของเวลา</a>
+</ul>
+
+<li />บทที่ 3
+<ul>
+<li /><a href="https://youtu.be/24eO3mYsSaA?si=O7WLQB4Ee5xJaiu9">Classical Loop Shaping (Thai)</a>
+</ul>
+
+<li />บทที่ 5
+<ul>
+<li /><a href="https://youtu.be/XHzSaWOAS0E?si=JPH8nAf90NuZly6s">NETPIE2020 dashboard : การส่ง message จาก ESP32 ไปยัง dashboard เพื่ออัพเดต</a>
+</ul>
+<li />บทที่ 6
+<ul>
+<li /><a href="https://youtu.be/a0tH8vJ3T0g?si=tzwP95jq2MsYPfZP">จำลอง micropython สำหรับ ESP32 และ NETPIE2020 บนเว็บ Wokwi</a>
+</ul>
+<li />บทที่ 8
+<ul>
+<li /><a href="https://youtu.be/3to1_SIWH64?si=RJJlr-ashozVOH8Z">จำลองพลวัตแขนกล 2 ก้านต่อเป็น custom chip บน wokwi</a>
+<li /><a href="https://youtu.be/P5REf6HBmz0?si=14ktX0IOTdaUbArB">ใช้ NETPIE IoT จำลองจลนศาสตร์แขนกลบน Jupyter notebook</a>
+<li /><a href="https://youtu.be/Dfr7qgxvRS8?si=6LlR_nIbKrHQhWb5">ตัวควบคุมไอโอทีสำหรับหุ่นยนต์สองล้อ (differential drive robot)</a>
+<li /><a href="https://youtu.be/3vH49engcdo?si=U-qlE9JvXggqxU1C">แก้ปัญหากริดเวิลด์เพื่อวางแผนเส้นทางเดินหุ่นยนต์</a>
+</ul>
+<li />ภาคผนวก A
+<ul>
+<li /><a href="https://youtu.be/lH7kSj0lai0?si=KllavgeFK3-qPKYj">ทดลองใช้ Paho MQTT library สื่อสารกับอุปกรณ์ IoT ผ่าน NETPIE 2020</a>
+</ul>
+
+<li />ภาคผนวก B
+<ul>
+<li /><a href="https://youtu.be/-P7gBgtUN0w?si=pzosqkCR48jrDkw4">สร้าง custom chip บน Wokwi เพื่อจำลองพลวัตของพลานต์</a>
+</ul>
+</ul>
+
+<b>หมายเหตุ : </b>
+หน้าตาของเครื่องมือซอฟต์แวร์ที่ใช้อาจมีการเปลี่ยนแปลงบ้างเมื่อมีการอัพเดตเวอร์ชัน 
