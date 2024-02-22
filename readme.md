@@ -98,6 +98,9 @@ client.username_pw_set(User,Password)
 
 ### วีดีโอ
 
+<a href="https://youtu.be/cTvssFFuPXw?si=RJRW-TDf5veUgQKF" target=_blank>คลิปวีดีโอแนะนำหนังสือและโปรแกรม</a>
+
+
 คลิปวีดีโอคัดเลือกที่เกี่ยวข้องกับเนื้อหาในหนังสือ คลิปอื่นดูได้จากช่อง <a href="https://www.youtube.com/@varodomt">@varodomt</a>
 
 <ul>
