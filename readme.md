@@ -53,7 +53,7 @@ client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2,
 client.username_pw_set(User,Password)
 ```
 
-จะเห็นว่ามีการเพิ่มอาร์กิวเมนต์แรกคือ mqtt.CallbackAPIVersion.VERSION2 ซึ่งจำเป็นต้องมี จะเพิ่มโค้ดส่วนที่แก้ไขแล้วอยู๋ในไดเรคทอรีย่อย /v2/
+จะเห็นว่ามีการเพิ่มอาร์กิวเมนต์แรกคือ mqtt.CallbackAPIVersion.VERSION2 ซึ่งจำเป็นต้องมี จะเพิ่มโค้ดส่วนที่แก้ไขแล้วอยู๋ในไดเรคทอรีย่อย /paho_v2/
 
 <hr>
 
