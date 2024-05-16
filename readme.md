@@ -149,5 +149,15 @@ client.username_pw_set(User,Password)
 </ul>
 </ul>
 
+### วีดีโอเสริม
+
+<ul>
+<li />การใช้พอร์ตอนุกรมเสมือน (virtual serial port) แทน IoT
+<ul>
+<li /><a href="https://youtu.be/7BJiWQn4hBs">รับส่งข้อมูลระหว่าง Wokwi กับ Jupyter notebook ผ่าน virtual serial port</a>
+<li /><a href="https://youtu.be/77J155Bu_eI">ทดลองใช้ Virtual serial port กับการจำลองหุ่นยนต์</a>
+</ul>
+</ul>
+
 <b>หมายเหตุ : </b>
 หน้าตาของเครื่องมือซอฟต์แวร์ที่ใช้อาจมีการเปลี่ยนแปลงบ้างเมื่อมีการอัพเดตเวอร์ชัน 
