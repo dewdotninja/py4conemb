@@ -143,7 +143,7 @@ client.username_pw_set(User,Password)
 
 <li />บทที่ 5
 <ul>
-<li /><a href="https://youtu.be/XHzSaWOAS0E?si=JPH8nAf90NuZly6s">NETPIE2020 dashboard : การส่ง message จาก ESP32 ไปยัง dashboard เพื่ออัพเดต</a>
+<li /><a href="https://youtu.be/IcM4Dt3rQYk?si=3TH6b5n7ZkagGKiL">NETPIE2020 dashboard : การส่ง message จาก ESP32 ไปยัง dashboard (อัพเดต 31 สค. 67) </a>
 </ul>
 <li />บทที่ 6
 <ul>
